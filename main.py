@@ -249,7 +249,7 @@ def exit():
 def cats():
     """Setting page and path"""
     cats = Cat.query.order_by(Cat.class_type).all()
-    return render_template('cat.html', cats=cats, title="Наши коты", jwt=request.cookies.get("jwt"))
+    return render_template('cat.html', cats=cats, title="Наши коты", jwt=request.cookies.get("jwt"), lang=request.cookies.get("lang"))
 
 
 @app.route("/cats.json", methods=['GET'])
@@ -436,7 +436,7 @@ def kitty():
         Cat.description, Cat.class_type, Cat.color
     ).all()
 
-    return render_template('cat.html', cats=kitties, title="Наши детки", jwt=request.cookies.get("jwt"))
+    return render_template('cat.html', cats=kitties, title="Наши детки", jwt=request.cookies.get("jwt"), lang=request.cookies.get("lang"))
 
 
 @app.route("/boys", methods=['GET'])
@@ -446,7 +446,7 @@ def boys():
         Cat.description, Cat.class_type, Cat.color
     ).filter_by(gender=False).all()
 
-    return render_template('cat.html', cats=kitties, title="Наши мальчики", jwt=request.cookies.get("jwt"))
+    return render_template('cat.html', cats=kitties, title="Наши мальчики", jwt=request.cookies.get("jwt"), lang=request.cookies.get("lang"))
 
 
 @app.route("/girls", methods=['GET'])
@@ -456,24 +456,25 @@ def girls():
         Cat.description, Cat.class_type, Cat.color
     ).filter_by(gender=True).all()
 
-    return render_template('cat.html', cats=kitties, title="Наши девочки", jwt=request.cookies.get("jwt"))
+    return render_template('cat.html', cats=kitties, title="Наши девочки", jwt=request.cookies.get("jwt"), lang=request.cookies.get("lang"))
 
 
 @app.route("/index")
 def index():
     """Setting page and path"""
-    return render_template('index.html', jwt=request.cookies.get("jwt"))
+    lang = "ukr"
+    return render_template('index.html', jwt=request.cookies.get("jwt"), lang=request.cookies.get("lang"))
 
 @app.route("/care")
 def care():
     """Setting page and path"""
-    return render_template('care.html', jwt=request.cookies.get("jwt"))
+    return render_template('care.html', jwt=request.cookies.get("jwt"), lang=request.cookies.get("lang"))
 
 
 @app.route("/")
 def landing():
     """Setting page and path"""
-    return render_template('landing.html', jwt=request.cookies.get("jwt"))
+    return render_template('landing.html', jwt=request.cookies.get("jwt"), lang=request.cookies.get("lang"))
 
 
 def all_cats_paths():
@@ -492,13 +493,13 @@ def all_cats_paths():
 def gallery():
     """Setting page and path"""
     paths = all_cats_paths()
-    return render_template('gallery.html', jwt=request.cookies.get("jwt"), paths=paths)
+    return render_template('gallery.html', jwt=request.cookies.get("jwt"), paths=paths, lang=request.cookies.get("lang"))
 
 
 @app.route("/admin")
 def admin_cat():
     """Setting page and path"""
-    return render_template('admin_cat.html')
+    return render_template('admin_cat.html', lang=request.cookies.get("lang"))
 
 
 def createdb():
@@ -555,9 +556,15 @@ def fillbd():
 
 @app.route("/init")
 def init():
-    #db.create_all()
+    db.create_all()
     fillbd()
-    return render_template('admin_cat.html')
+    return redirect('/admin')
+
+@app.route("/lang/<language>", methods=['GET'])
+def language(language):
+    resp = make_response(redirect('/'))
+    resp.set_cookie('lang', language)
+    return resp
 
 if __name__ == "__main__":
     app.run(debug=True)

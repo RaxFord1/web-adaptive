@@ -1,10 +1,46 @@
 <footer class="py-3 my-4">
   <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Главная</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Питомцы</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Покупателям</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Галерея</a></li>
-    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Статьи</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
+      {% if 'eng' == lang %}
+      Main
+      {% elif 'ukr' == lang %}
+      Головна
+      {% else %}
+      Главная
+      {% endif %}</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
+      {% if 'eng' == lang %}
+      Pets
+      {% elif 'ukr' == lang %}
+      Вихованці
+      {% else %}
+      Питомцы
+      {% endif %}</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
+      {% if 'eng' == lang %}
+      Buyers
+      {% elif 'ukr' == lang %}
+      Покупцям
+      {% else %}
+      Покупателям
+      {% endif %}</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
+      {% if 'eng' == lang %}
+      Gallery
+      {% elif 'ukr' == lang %}
+      Галерея
+      {% else %}
+      Галерея
+      {% endif %}</a></li>
+    <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">
+      {% if 'eng' == lang %}
+      Articles
+      {% elif 'ukr' == lang %}
+      Статті
+      {% else %}
+      Статьи
+      {% endif %}
+    </a></li>
   </ul>
   <p class="text-center text-muted">© 2022 Кусь</p>
 </footer>

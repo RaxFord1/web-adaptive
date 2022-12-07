@@ -40,21 +40,54 @@
             <div class="col-md-6 col-xl-5">
                 <div class="lc-block mb-3">
                     <div editable="rich">
-                        <h1 class="fw-bolder display-3">Найдите себе нового компаньона</h1>
+                        <h1 class="fw-bolder display-3">
+                        {% if 'eng' == lang %}
+                        Find yourself a new companion
+                        {% elif 'ukr' == lang %}
+                        Знайдіть собі нового компаньйона
+                        {% else %}
+                        Найдите себе нового компаньона
+                        {% endif %}
+                        </h1>
                     </div>
                 </div>
                 
                 <div class="lc-block mb-4">
                     <div editable="rich">
-                        <p class="lead"> Соединяем замечательных людей со счастливым и здоровым котенком. </p>
+                        <p class="lead"> 
+                            {% if 'eng' == lang %}
+                            We connect wonderful people with a happy and healthy kitten.
+                            {% elif 'ukr' == lang %}
+                            З'єднуємо чудових людей зі щасливим та здоровим кошеням.
+                            {% else %}
+                            Соединяем замечательных людей со счастливым и здоровым котенком.
+                            {% endif %} 
+                        </p>
                     </div>
 
-                        <button class="button-strt" role="button">Начать <i class="arrow right"></i></button>
+                        <button class="button-strt" role="button">
+                            {% if 'eng' == lang %}
+                            Start
+                            {% elif 'ukr' == lang %}
+                            Почати
+                            {% else %}
+                            Начать
+                            {% endif %} 
+                            <i class="arrow right"></i>
+                        </button>
                         
                         <a class="navbar-brand px-3" href="#">
                         <img src="{{ url_for('static', filename='images/QJUZoK6.png') }}" height="40" viewBox="0 0 16 16"
                             loading="lazy" />
-                            <a class ="text-light text-decoration-none" href ="#">Посмотреть котят</a>  
+                            <a class ="text-light text-decoration-none" href ="#">
+                                {% if 'eng' == lang %}
+                                View kittens.
+                                {% elif 'ukr' == lang %}
+                                Переглянути кошенят.
+                                {% else %}
+                                Посмотреть котят.
+                                {% endif %} 
+                            </a>  
                         </a>
                     
                     </div>
@@ -74,24 +107,49 @@
           <div class = "row">
               <div class ="col-9">
               <div class="about-header">
-                  <h1 class = "text-center">Котята для приема</h1>
+                  <h1 class = "text-center">
+                    {% if 'eng' == lang %}
+                    Kittens for admission
+                    {% elif 'ukr' == lang %}
+                    Кошенята для прийому
+                    {% else %}
+                    Котята для приема
+                    {% endif %} 
+                </h1>
               </div>
               </div>
               <div class = "col-3">
-              <a href="#" class="btn btn-lg button-strt-3">Посмотреть всех котят <i class="arrow right"></i></a>
-              </div>
+                <a href="#" class="btn btn-lg button-strt-3">
+                    {% if 'eng' == lang %}
+                    View all kittens
+                    {% elif 'ukr' == lang %}
+                    Переглянути всіх кошенят
+                    {% else %}
+                    Посмотреть всех котят
+                    {% endif %}  
+                    <i class="arrow right"></i>
+                </a>
+            </div>
   
           </div>
           
-              <div class ="row">
+            <div class ="row">
               <div class ="col-9">
-                  <div class="badge bg-light text-wrap container-fluid slogan-content align-items-center">
-                  <p class="slogan-text">Кусь соединяет таких милых людей, как вы, со счастливыми, здоровыми котятами благодаря нашим уважаемым и выдающимся отношениям с заводчиками, которые мы установили за последние 5 лет.</p>
-                  </div>
+                    <div class="badge bg-light text-wrap container-fluid slogan-content align-items-center">
+                        <p class="slogan-text">
+                            {% if 'eng' == lang %}
+                            Kus connects sweet people like you with happy, healthy kittens through our respected and outstanding breeder relationships we have built over the past 5 years.
+                            {% elif 'ukr' == lang %}
+                            Кусь поєднує таких милих людей, як ви, зі щасливими, здоровими кошенятами завдяки нашим шановним та видатним стосункам із заводчиками, які ми встановили за останні 5 років.
+                            {% else %}
+                            Кусь соединяет таких милых людей, как вы, со счастливыми, здоровыми котятами благодаря нашим уважаемым и выдающимся отношениям с заводчиками, которые мы установили за последние 5 лет.
+                            {% endif %}  
+                        </p>
+                    </div>
                   
-              </div>
+                </div>
               
-              </div>
+            </div>
           </div>
           <div class = "d-lg-none">
           <div class = "row">
@@ -161,7 +219,15 @@
   <section class="slogan">
       <div class="container padding-lg">
           <div class="about-header">
-          <h1 class = "text-center">Готовы ли вы?</h1>
+            <h1 class = "text-center">
+                {% if 'eng' == lang %}
+                Are you ready?
+                {% elif 'ukr' == lang %}
+                Чи ви готові?
+                {% else %}
+                Готовы ли вы?
+                {% endif %}
+            </h1>
       </div>
           <div class = "row">
           <div class = "col-6">
@@ -169,19 +235,39 @@
               <div class="accordion-item">
                   <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                      Совет 1 
+                    {% if 'eng' == lang %}
+                    Advice
+                    {% elif 'ukr' == lang %}
+                    Порада
+                    {% else %}
+                    Совет
+                    {% endif %}   
+                    1 
                   </button>
                   </h2>
                   <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                   <div class="accordion-body">
-                      Зная сколько внимания вы можете уделить пушистому другу поможет определиться готовы ли вы завести своего. Также это поможет определиться, какая порода подойдёт лучше для вас. "Если вы слишком заняты, либо недостаточно часто находитись дома - вам не следует заводить котёнка."
+                    {% if 'eng' == lang %}
+                    Knowing how much attention you can give your furry friend will help you decide if you're ready to have one. It will also help you decide which breed is best for you. "If you're too busy or not home often enough, you shouldn't get a kitten."
+                    {% elif 'ukr' == lang %}
+                    Знаючи, як багато уваги ви можете зробити вашу приємну людину, щоб допомогти вам вирішити, якщо ви хотіли б отримати один. Це буде також help you decide which breed is best for you. "Якби ви хотіли або не вважалися домашніми, ви повинні хотіти кинути."
+                    {% else %}
+                    Зная сколько внимания вы можете уделить пушистому другу поможет определиться готовы ли вы завести своего. Также это поможет определиться, какая порода подойдёт лучше для вас. "Если вы слишком заняты, либо недостаточно часто находитись дома - вам не следует заводить котёнка".
+                    {% endif %} 
+                      
                   </div>
                   </div>
               </div>
               <div class="accordion-item">
                   <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                      Accordion Item #2
+                    {% if 'eng' == lang %}
+                    Advice
+                    {% elif 'ukr' == lang %}
+                    Порада
+                    {% else %}
+                    Совет
+                    {% endif %}   2
                   </button>
                   </h2>
                   <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
@@ -193,7 +279,13 @@
               <div class="accordion-item">
                   <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                      Accordion Item #3
+                    {% if 'eng' == lang %}
+                    Advice
+                    {% elif 'ukr' == lang %}
+                    Порада
+                    {% else %}
+                    Совет
+                    {% endif %}   3
                   </button>
                   </h2>
                   <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
@@ -218,12 +310,28 @@
       <div class ="py-3 mb-3">
       <div class ="container">
           <div class="about-header">
-          <h1 class = "text-center">Почему именно мы?</h1>
+            <h1 class = "text-center">
+                {% if 'eng' == lang %}
+                Why us?
+                {% elif 'ukr' == lang %}
+                Чому ми?
+                {% else %}
+                Почему именно мы?
+                {% endif %}
+            </h1>
           </div>
           <div class ="row">
-          <div class = "col slogan-content">
-              <p class = "slogan-text"> Более 5-ти лет мы делаем... </p>
-          </div>
+            <div class = "col slogan-content">
+                <p class = "slogan-text"> 
+                    {% if 'eng' == lang %}
+                    For over 5 years we have been...
+                    {% elif 'ukr' == lang %}
+                    Більше 5-ти років ми...
+                    {% else %}
+                    Более 5-ти лет мы делаем...
+                    {% endif %} 
+                </p>
+            </div>
           </div>
           <div class ="lightbox">
           <div class = "row">
@@ -232,24 +340,71 @@
                   <img class="rounded-circle shadow-4-strong d-block w-100 img-fluid rounded shadow" alt="avatar1" src="{{ url_for('static', filename='images/B7CzA6o.jpg') }}" />
               </a>
               
-              <h2 class = "text-center">Гарантия здоровья</h2>
-              <p class ="slogan-bottom text-center">Мы осознаём важность иметь счастливого и здорового питомца.</p>
+              <h2 class = "text-center">
+                {% if 'eng' == lang %}
+                Health guarantee
+                {% elif 'ukr' == lang %}
+                Гарантія здоров'я
+                {% else %}
+                Гарантия здоровья
+                {% endif %} </h2>
+                <p class ="slogan-bottom text-center">
+                    {% if 'eng' == lang %}
+                    We understand the importance of having a happy and healthy pet.
+                    {% elif 'ukr' == lang %}
+                    Ми усвідомимо важливість мати щасливого та здорового вихованця.
+                    {% else %}
+                    Мы осознаём важность иметь счастливого и здорового питомца.
+                    {% endif %}
+                </p>
               <a href="#" class="btn btn-lg button-strt-2 mt-auto button-card-r"><i class="arrow right"></i></a>
               </div>
               <div class ="col slogan-content">
               <a href = "{{ url_for('static', filename='images/B7CzA6o.jpg') }}" data-toggle="lightbox">
                   <img class="rounded-circle shadow-4-strong d-block w-100 img-fluid rounded shadow" alt="avatar1" src="{{ url_for('static', filename='images/B7CzA6o.jpg') }}" />
               </a>
-              <h2 class = "text-center h2">Расстояние не важно</h2>
-              <p class ="slogan-bottom text-center">Расстояние не важно, сделаем всё что в наших силах.</p>
-              <a href="#" class="btn btn-lg button-strt-2 mt-auto button-card-r"><i class="arrow right"></i></a>
-              </div>
-              <div class ="col slogan-content">
-              <a href = "https://i.imgur.com/B7CzA6o.jpg" data-toggle="lightbox">
-                  <img class="rounded-circle shadow-4-strong d-block w-100 img-fluid rounded shadow" alt="avatar1" src="{{ url_for('static', filename='images/B7CzA6o.jpg') }}" />
-              </a>
-              <h2 class = "text-center h2">Дополнительные аксессуары</h2>
-              <p class ="slogan-bottom text-center"> Высылается любимая игрушка в подарок.</p>
+                <h2 class = "text-center h2">
+                    {% if 'eng' == lang %}
+                    Distance doesn't matter.
+                    {% elif 'ukr' == lang %}
+                    Відстань не важлива.
+                    {% else %}
+                    Расстояние не важно.
+                    {% endif %}
+                </h2>
+                <p class ="slogan-bottom text-center">
+                    {% if 'eng' == lang %}
+                    Distance doesn't matter, we'll do our best.
+                    {% elif 'ukr' == lang %}
+                    Відстань не важлива, зробимо все що в наших силах.
+                    {% else %}
+                    Расстояние не важно, сделаем всё что в наших силах.
+                    {% endif %}
+                </p>
+                <a href="#" class="btn btn-lg button-strt-2 mt-auto button-card-r"><i class="arrow right"></i></a>
+                </div>
+                <div class ="col slogan-content">
+                <a href = "https://i.imgur.com/B7CzA6o.jpg" data-toggle="lightbox">
+                    <img class="rounded-circle shadow-4-strong d-block w-100 img-fluid rounded shadow" alt="avatar1" src="{{ url_for('static', filename='images/B7CzA6o.jpg') }}" />
+                </a>
+                <h2 class = "text-center h2">
+                    {% if 'eng' == lang %}
+                    Additional accessories.
+                    {% elif 'ukr' == lang %}
+                    Додаткові аксесуари.
+                    {% else %}
+                    Дополнительные аксессуары.
+                    {% endif %}
+                </h2>
+                <p class ="slogan-bottom text-center"> 
+                    {% if 'eng' == lang %}
+                    Your favorite toy is sent as a gift.
+                    {% elif 'ukr' == lang %}
+                    Надсилається улюблена іграшка в подарунок.
+                    {% else %}
+                    Высылается любимая игрушка в подарок.
+                    {% endif %}
+                </p>
               <a href="#" class="btn btn-lg button-strt-2 mt-auto button-card-r"><i class="arrow right"></i></a>
               </div>
           </div>

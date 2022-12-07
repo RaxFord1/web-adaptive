@@ -2,7 +2,15 @@
     <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark nav-bg">
         <div class="container-fluid lead">
-        <a class="navbar-brand" href="/">Кусь</a>
+        <a class="navbar-brand" href="/">
+            {% if 'eng' == lang %}
+            Kus
+            {% elif 'ukr' == lang %}
+            Кусь
+            {% else %}
+            Кусь
+            {% endif %}
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,32 +19,101 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index">Инфо</a>
+                <a class="nav-link active" aria-current="page" href="/index">
+                    {% if 'eng' == lang %}
+                    Info
+                    {% elif 'ukr' == lang %}
+                    Інфо
+                    {% else %}
+                    Инфо
+                    {% endif %}
+                </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Питомцы
+                    {% if 'eng' == lang %}
+                    Pets
+                    {% elif 'ukr' == lang %}
+                    Питомці
+                    {% else %}
+                    Питомцы
+                    {% endif %}
                 </a>
                 <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item " href="/cats">Коты</a></li>
-                <li><a class="dropdown-item "  href="/kitty">Котята</a></li>
-                <li><a class="dropdown-item " href="/boys">Мальчики</a></li>
-                <li><a class="dropdown-item " href="/girls">Девочки</a></li>
+                <li><a class="dropdown-item " href="/cats">
+                    {% if 'eng' == lang %}
+                    Cats
+                    {% elif 'ukr' == lang %}
+                    Коти
+                    {% else %}
+                    Коты
+                    {% endif %}
+                </a></li>
+                <li><a class="dropdown-item "  href="/kitty">
+                    {% if 'eng' == lang %}
+                    Kittens
+                    {% elif 'ukr' == lang %}
+                    Котіки
+                    {% else %}
+                    Котята
+                    {% endif %}
+                </a></li>
+                <li><a class="dropdown-item " href="/boys">
+                    {% if 'eng' == lang %}
+                    Boys
+                    {% elif 'ukr' == lang %}
+                    Хлопці
+                    {% else %}
+                    Мальчики
+                    {% endif %}
+                </a></li>
+                <li><a class="dropdown-item " href="/girls">
+                    {% if 'eng' == lang %}
+                    Girls
+                    {% elif 'ukr' == lang %}
+                    Дівчата
+                    {% else %}
+                    Девочки
+                    {% endif %}
+                </a></li>
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/gallery">Галерея</a>
+                <a class="nav-link active" href="/gallery">
+                    {% if 'eng' == lang %}
+                    Gallery
+                    {% elif 'ukr' == lang %}
+                    Галерея
+                    {% else %}
+                    Галерея
+                    {% endif %}
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="/care">Уход</a>
+                <a class="nav-link active" href="/care">
+                    {% if 'eng' == lang %}
+                    Care
+                    {% elif 'ukr' == lang %}
+                    Догляд
+                    {% else %}
+                    Уход
+                    {% endif %}
+                </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Локализация
+                    {% if 'eng' == lang %}
+                    Localization
+                    {% elif 'ukr' == lang %}
+                    Локалізація
+                    {% else %}
+                    Локализация
+                    {% endif %}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#">UA</a></li>
-                <li><a class="dropdown-item" href="#">EN</a></li>
+                <li><a class="dropdown-item" href="/lang/ukr">UA</a></li>
+                <li><a class="dropdown-item" href="/lang/rus">RU</a></li>
+                <li><a class="dropdown-item" href="/lang/eng">EN</a></li>
                 </ul>
             </li>
             </ul>
@@ -44,12 +121,36 @@
         </div>
         {% if jwt is not none %}
         <form class="container-fluid d-none d-lg-block" action="/exit" method="GET">
-            <button class="btn btn-sm btn-outline-light " id="navbar_exit_button" type="submit">Выйти</button>
+            <button class="btn btn-sm btn-outline-light " id="navbar_exit_button" type="submit">
+                {% if 'eng' == lang %}
+                Exit
+                {% elif 'ukr' == lang %}
+                Вийти
+                {% else %}
+                Выйти
+                {% endif %}
+            </button>
         </form>
         {% else %}
             <form class="container-fluid d-none d-lg-block">
-                <button class="btn btn-sm btn-outline-light " id="navbar_login_button" type="button">Войти</button>
-                <button class="btn btn-sm btn-outline-light " id="navbar_register_button" type="button">Регистрация</button>
+                <button class="btn btn-sm btn-outline-light " id="navbar_login_button" type="button">
+                    {% if 'eng' == lang %}
+                    Enter
+                    {% elif 'ukr' == lang %}
+                    Увійти
+                    {% else %}
+                    Войти
+                    {% endif %}
+                </button>
+                <button class="btn btn-sm btn-outline-light " id="navbar_register_button" type="button">
+                    {% if 'eng' == lang %}
+                    Registration
+                    {% elif 'ukr' == lang %}
+                    Регістрація
+                    {% else %}
+                    Регистрация
+                    {% endif %}
+                </button>
             </form>
         {% endif %}
         </div>
