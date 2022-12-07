@@ -7,7 +7,14 @@
 
 		<div class="row">
 			<div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<h1 class="gallery-title">Галерея</h1>
+				<h1 class="gallery-title">{% if 'eng' == lang %}
+					Gallery
+					{% elif 'ukr' == lang %}
+					Галерея
+					{% else %}
+					Галерея
+					{% endif %}
+				</h1>
 			</div>
 
 			{% for path in paths %}

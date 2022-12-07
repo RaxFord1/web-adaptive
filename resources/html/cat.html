@@ -5,7 +5,13 @@
 <div class="wrapper">
 	<div class="text-center">
 		<h1><i>
-			{{ title }}
+			{% if 'eng' == lang %}
+			Cats
+			{% elif 'ukr' == lang %}
+			Коти
+			{% else %}
+			Коты
+			{% endif %}
 			<br>
 		</i></h1>
 	</div>
@@ -21,9 +27,21 @@
 						<strong class="d-inline-block mb-2 text-primary" >
 							<span class="gender">
 								{% if cat.gender == 1 %} 
+									{% if 'eng' == lang %}
+									Girl
+									{% elif 'ukr' == lang %}
+									Дівчинка
+									{% else %}
 									Девочка
+									{% endif %}
 								{% else %}
+									{% if 'eng' == lang %}
+									Boy
+									{% elif 'ukr' == lang %}
+									Хлопчик
+									{% else %}
 									Мальчик
+									{% endif %}
 								{% endif %}
 							</span>
 						</strong>
@@ -41,7 +59,15 @@
 
 				<p class="card-text mb-auto"><span class="color">{{cat.color}}</span></p>
                 {% if cat.available == 1 %}
-                    <button class="btn-update reservation">Замовити</a>
+                    <button class="btn-update reservation">
+						{% if 'eng' == lang %}
+						Order
+						{% elif 'ukr' == lang %}
+						Замовити
+						{% else %}
+						Заказать
+						{% endif %}
+					</a>
                 {% endif %}
 				
 			</div>
@@ -60,23 +86,81 @@
 			<h2><span class="name"></span></h2>
 		</div>
 		{% include 'templates/carousel.html' %}
-		<h4>Имя: <span class="name"></span></h4>
-		<p>Пол: <span class="gender"></span></p>
-		<p>Помёт: <span class="class_type"></span></p>
-		<p>День рождения: <span class="bday"></span></p>
-		<p>Цвет: <span class="color"></span></p>
-		<p>Описание: <span class="description"></span></p>
+		<h4>
+			{% if 'eng' == lang %}
+			Name
+			{% elif 'ukr' == lang %}
+			Ім'я
+			{% else %}
+			Имя
+			{% endif %}: <span class="name"></span></h4>
+		<p>
+			{% if 'eng' == lang %}
+			Gender
+			{% elif 'ukr' == lang %}
+			Стать
+			{% else %}
+			Пол
+			{% endif %}: <span class="gender"></span></p>
+		<p>
+			{% if 'eng' == lang %}
+			Litter
+			{% elif 'ukr' == lang %}
+			Помет
+			{% else %}
+			Помёт
+			{% endif %}: <span class="class_type"></span></p>
+		<p>
+			{% if 'eng' == lang %}
+			Birthday
+			{% elif 'ukr' == lang %}
+			День народження
+			{% else %}
+			День рождения
+			{% endif %}: <span class="bday"></span></p>
+		<p>
+			{% if 'eng' == lang %}
+			Color
+			{% elif 'ukr' == lang %}
+			Колір
+			{% else %}
+			Цвет
+			{% endif %}: <span class="color"></span></p>
+		<p>
+			{% if 'eng' == lang %}
+			Description
+			{% elif 'ukr' == lang %}
+			Опис
+			{% else %}
+			Описание
+			{% endif %}: <span class="description"></span></p>
 
 		<form method="POST" action="/make_booking">
 			<div class="form-input">
 				<label for="message">Ваш коментарий:</label>
 				<input id="message" type="text" name="message">
-				<button class='btn btn-info btn-xs btn-submit'>Подтвердить</button>
+				<button class='btn btn-info btn-xs btn-submit'>
+					{% if 'eng' == lang %}
+					Submit
+					{% elif 'ukr' == lang %}
+					Підтвердити
+					{% else %}
+					Подтвердить
+					{% endif %}
+				</button>
 			</div>
 			<input type="hidden" id="cat_id" name="cat_id" value="" />
 		</form>
 		<div class="form-button">
-			<button class='btn btn-danger btn-xs btn-exit'>Exit</button>
+			<button class='btn btn-danger btn-xs btn-exit'>
+				{% if 'eng' == lang %}
+				Exit
+				{% elif 'ukr' == lang %}
+				Вийти
+				{% else %}
+				Выйти
+				{% endif %}
+			</button>
 		</div>
 	</div>
 
@@ -112,14 +196,26 @@
 		
 	</script>
 {% else %}
+	{% if 'eng' == lang %}
+	<script type="text/javascript">
+		$(".reservation").on( "click", function( event ) {
+			alert("Register and auth to your account!")
+		});
+	</script>
+	{% elif 'ukr' == lang %}
+	<script type="text/javascript">
+		$(".reservation").on( "click", function( event ) {
+			alert("Зареєструйтесь та увійдіть у свій аккаунт!")
+		});
+	</script>
+	{% else %}
 	<script type="text/javascript">
 		$(".reservation").on( "click", function( event ) {
 			alert("Зарегистрируйтесь и войдите в аккаунт!")
 		});
 	</script>
+	{% endif %}
+	
 {% endif %}
-
-
-
 
 {% endblock %}

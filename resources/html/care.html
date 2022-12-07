@@ -5,61 +5,234 @@
 <div class="wrapper">
 
     <div class="care-conteiner">
-        <div class="title"><h2>Уход за домашней кошкой</h2></div>
+        <div class="title"><h2>
+            {% if 'eng' == lang %}
+            Domestic cat care
+            {% elif 'ukr' == lang %}
+            Догляд за домашньою кішкою
+            {% else %}
+            Уход за домашней кошкой
+            {% endif %}
+        </h2></div>
         <img src="./static/images/care-img.jpg" alt="#">
-        <p>Кошки – чистоплотные животные. Они вылизывают шерсть, а также стремятся к тому, чтобы содержать в порядке свое место. Но, какими бы сознательными не были усатые любимцы, без нашей помощи они не справятся.</p>
-        <div class="sub_title">Правила ухода за кошками</div>
-        <p>Уход за домашними кошками начинается с постели, кроватки, где будет спать животное.
-Постель должна находиться в теплом месте подальше от сквозняков.</p>
-        <div class="sub_title">Кошачий туалет</div>
-        <p>Обустройте кошачий туалет так, чтобы кошке было удобно и никто ее не беспокоил. Подберите наполнитель для лотка. Например, для длинношерстных кошек лучше выбирать крупные гранулы, которые не прилипнут к шерсти. Своевременно убирайте за питомцем.
-Если в доме две кошки, то для каждой нужен свой лоток.</p>
-        <div class="sub_title">Питание кошек</div>
-        <p>Мурлыкам ни в коем случае нельзя давать еду со стола, как бы они не просили. Если наш организм спокойно переносит сладкое, соленое и острое, то для кошек такой набор может привести к болезнямi.
-
+        <p>
+            {% if 'eng' == lang %}
+            Cats are clean animals. They lick their fur, and also strive to keep their place in order. But no matter how conscious the mustachioed pets are, they will not cope without our help.
+            {% elif 'ukr' == lang %}
+            Кішки – охайні тварини. Вони вилизують шерсть, а також прагнуть тримати в порядку своє місце. Але, якими б свідомими не були вусаті улюбленці, без нашої допомоги вони не впораються.
+            {% else %}
+            Кошки – чистоплотные животные. Они вылизывают шерсть, а также стремятся к тому, чтобы содержать в порядке свое место. Но, какими бы сознательными не были усатые любимцы, без нашей помощи они не справятся.
+            {% endif %}
+        </p>
+        <div class="sub_title">
+            {% if 'eng' == lang %}
+            Rules for caring for cats
+            {% elif 'ukr' == lang %}
+            Правила догляду за кішками
+            {% else %}
+            Правила ухода за кошками
+            {% endif %}
+        </div>
+        <p>
+            {% if 'eng' == lang %}
+Caring for domestic cats begins with a bed, a crib where the animal will sleep.
+The bed should be in a warm place away from drafts.
+            {% elif 'ukr' == lang %}
+Догляд за домашніми кішками починається з ліжка, ліжечка, де спатиме тварина.
+Ліжко має бути в теплому місці подалі від протягів.
+            {% else %}
+Уход за домашними кошками начинается с постели, кроватки, где будет спать животное.
+Постель должна находиться в теплом месте подальше от сквозняков.
+            {% endif %}
+        </p>
+        <div class="sub_title">{% if 'eng' == lang %}
+            Сat toilet
+            {% elif 'ukr' == lang %}
+            Котячий туалет
+            {% else %}
+            Кошачий туалет
+            {% endif %}
+        </div>
+        <p>
+            {% if 'eng' == lang %}
+Arrange the cat litter box so that the cat is comfortable and no one bothers her. Choose a filler for the tray. For example, for long-haired cats, it is better to choose large granules that do not stick to the coat. Clean up after your pet promptly.
+If there are two cats in the house, then each needs its own tray.
+            {% elif 'ukr' == lang %}
+Облаштуйте котячий туалет так, щоб кішці було зручно і ніхто її не турбував. Виберіть наповнювач для лотка. Наприклад, для довгошерстих кішок краще вибирати великі гранули, які не прилипнуть до вовни. Своєчасно прибирайте за вихованцем.
+Якщо в будинку дві кішки, то для кожної потрібний свій лоток.
+            {% else %}
+Обустройте кошачий туалет так, чтобы кошке было удобно и никто ее не беспокоил. Подберите наполнитель для лотка. Например, для длинношерстных кошек лучше выбирать крупные гранулы, которые не прилипнут к шерсти. Своевременно убирайте за питомцем.
+Если в доме две кошки, то для каждой нужен свой лоток.
+            {% endif %}
+        </p>
+        <div class="sub_title">{% if 'eng' == lang %}
+            Cat nutrition
+            {% elif 'ukr' == lang %}
+            Харчування котів
+            {% else %}
+            Питание кошек
+            {% endif %}
+        </div>
+        <p>
+            {% if 'eng' == lang %}
+In no case should purrs be given food from the table, no matter how they ask. If our body calmly tolerates sweet, salty and spicy, then for cats such a set can lead to diseases.
+Proper nutrition of cats should be well-composed and balanced. You can feed the animal with natural or professional food.
+If you have chosen professional food, try not to save. Cheap food does not contribute to the longevity and health of catsii. Follow the dosages that are written on the package. If you choose natural food, you will have to make your own menu for the pet: the diet must be balanced, it must include products with useful substances necessary for the health of the animal.
+If professional feeds are enriched with vitamin and mineral complexes, then in your case you will have to think about these useful compounds yourself.
+Kittens are fed 5-6 times a day, and from a year - 2-3 times a day.
+If you follow the feeding regimen, then the cat will not torment you with meowing and will get used to taking food at a certain time.
+Make sure that the cat has a bowl of clean water and change it once a day.
+            {% elif 'ukr' == lang %}
+Мурликам у жодному разі не можна давати їжу зі столу, як би вони не просили. Якщо наш організм спокійно переносить солодке, солоне та гостре, то для кішок такий набір може призвести до хвороб.
+Правильне харчування кішок має бути грамотно складеним та збалансованим. Ви можете годувати тварину натуральним чи професійним кормом.
+Якщо ви вибрали професійний корм, намагайтеся не заощаджувати. Дешеві корми не сприяють довголіттю та здоров'ю кошекii. Дотримуйтесь дозування, написаних на упаковці. У разі вибору натурального харчування доведеться самостійно скласти меню вихованця: раціон має бути збалансований, до нього потрібно включити продукти з корисними речовинами, необхідними для здоров'я тварини.
+Якщо професійні корми збагачені вітамінно-мінеральними комплексами, то у вашому випадку про ці корисні склади доведеться замислитись самим.
+Кошенят годують 5-6 разів на день, а з року – 2-3 рази на день.
+Якщо будете дотримуватися режиму годівлі, то кішка не мучитиме вас нявканням і звикне приймати їжу в певний час.
+Слідкуйте за тим, щоб у кішки була в мисці чиста вода і змінюйте її щодня.
+            {% else %}
+Мурлыкам ни в коем случае нельзя давать еду со стола, как бы они не просили. Если наш организм спокойно переносит сладкое, соленое и острое, то для кошек такой набор может привести к болезнямi.
 Правильное питание кошек должно быть грамотно составленным и сбалансированным. Вы можете кормить животное натуральным или профессиональным кормом.
-
 Если вы выбрали профессиональный корм, старайтесь не экономить. Дешевые корма не способствуют долголетию и здоровью кошекii. Соблюдайте дозировки, которые написаны на упаковке. В случае выбора натурального питания придется самостоятельно составить меню питомца: рацион должен быть сбалансирован, в него нужно включить продукты с полезными веществами, необходимыми для здоровья животного.
-
 Если профессиональные корма обогащены витаминно-минеральными комплексами, то в вашем случае об этих полезных составах придется задуматься самим.
-
 Котят кормят 5-6 раз в день, а с года – 2-3 раза в день.
-
 Если будете соблюдать режим кормления, то кошка не будет мучить вас мяуканьем и привыкнет принимать еду в определенное время.
-
-Следите за тем, чтобы у кошки была в миске чистая вода и меняйте ее раз в день.</p>
-        <div class="sub_title">Уход за шерстью кошки и купание</div>
-        <p>Если у питомца длинная шерсть, то придется вычесывать ее каждый день специальной щеткой. При короткой шерсти кошку протирают мокрой губкой.
-
+Следите за тем, чтобы у кошки была в миске чистая вода и меняйте ее раз в день.
+            {% endif %}
+        </p>
+        <div class="sub_title">
+            {% if 'eng' == lang %}
+            Cat grooming and bathing
+            {% elif 'ukr' == lang %}
+            Догляд за вовною кішки та купання
+            {% else %}
+            Уход за шерстью кошки и купание
+            {% endif %}
+        </div>
+        <p>
+            {% if 'eng' == lang %}
+If the pet has long hair, then you will have to comb it every day with a special brush. With short hair, the cat is wiped with a wet sponge.
+You need to wash the animal 2-3 times a year or if necessary.
+For your convenience, we offer a simple checklist so that you do not forget anything and ensure competent care for your pet.
+            {% elif 'ukr' == lang %}
+Якщо у вихованця довга шерсть, то доведеться вичісувати її щодня спеціальною щіткою. При короткій вовні кішку протирають мокрою губкою.
+Мити тварину потрібно 2-3 рази на рік або у разі потреби.
+Для вашої зручності пропонуємо простий чек-лист, щоб нічого не забути та забезпечити грамотний догляд за улюбленцем.
+            {% else %}
+Если у питомца длинная шерсть, то придется вычесывать ее каждый день специальной щеткой. При короткой шерсти кошку протирают мокрой губкой.
 Мыть животное нужно 2-3 раза в год или в случае необходимости.
-
-Для вашего удобства предлагаем простой чек-лист, чтобы ничего не забыть и обеспечить грамотный уход за любимцем.</p>
-        <div class="sub_title">Каждодневно:</div>
+Для вашего удобства предлагаем простой чек-лист, чтобы ничего не забыть и обеспечить грамотный уход за любимцем.
+            {% endif %}
+        </p>
+        <div class="sub_title">
+            {% if 'eng' == lang %}
+            Daily:
+            {% elif 'ukr' == lang %}
+            Щодня:
+            {% else %}
+            Каждодневно:
+            {% endif %}
+        </div>
         <ul>
+            {% if 'eng' == lang %}
+            <li> feed, water, change the water in the bowl;</li>
+            <li> clean tray;</li>
+            <li> combing long-haired cats;</li>
+            <li> to play. Do not forget to please yourself and your pet with fun games.</li>
+            {% elif 'ukr' == lang %}
+            <li> годувати, напувати, міняти воду в мисці;</li>
+            <li>чистити лоток;</li>
+            <li> вичісувати довгошерстих кішок;</li>
+            <li> грати. Не забувайте порадувати себе та вихованця веселими іграми.</li>
+            {% else %}
             <li> кормить, поить, менять воду в миске;</li>
             <li> чистить лоток;</li>
             <li> вычесывать длинношерстных кошек;</li>
             <li> играть. Не забывайте порадовать себя и питомца веселыми играми.</li>
+            {% endif %}
         </ul>
-        <div class="sub_title">Раз в неделю:</div>
+        <div class="sub_title">
+            {% if 'eng' == lang %}
+            Once a week:
+            {% elif 'ukr' == lang %}
+            Раз на тиждень:
+            {% else %}
+            Раз в неделю:
+            {% endif %}
+        </div>
         <ul>
+            {% if 'eng' == lang %}
+            <li> brush your teeth;</li>
+            <li> Examine your ears and eyes for discharge. If necessary, do this more often. For example, Persian cats need to have their eyes cleaned almost every day.</li>
+            {% elif 'ukr' == lang %}
+            <li> чистка зубів;</li>
+            <li> оглядайте вуха та очі на предмет виділень. За потреби – робіть це частіше. Наприклад, перським кішкам потрібно очищати очі майже щодня.</li>
+            {% else %}
             <li> проводите чистку зубов;</li>
             <li> осматривайте уши и глаза на предмет выделений. При необходимости – делайте это чаще. Например, персидским кошкам нужно очищать глаза почти каждый день.</li>
+            {% endif %}
         </ul>
-        <div class="sub_title">Раз в месяц:</div>
+        <div class="sub_title">
+            {% if 'eng' == lang %}
+            Once a month:
+            {% elif 'ukr' == lang %}
+            Раз на місяць:
+            {% else %}
+            Раз в месяц:
+            {% endif %}
+        </div>
         <ul>
+            {% if 'eng' == lang %}
+            <li> cut your nails;</li>
+            <li> trim excess hair on longhaired cats.</li>
+            {% elif 'ukr' == lang %}
+            <li> стрижіть нігті;</li>
+            <li> підстригайте зайву вовну у довгошерстих кішок.</li>
+            {% else %}
             <li> стригите ногти;</li>
             <li> подстригайте лишнюю шерсть у длинношерстных кошек.</li>
+            {% endif %}
         </ul>
-        <div class="sub_title">Раз в три месяца:</div>
+        <div class="sub_title">
+            {% if 'eng' == lang %}
+            Once every three months
+            {% elif 'ukr' == lang %}
+            Раз на три місяці
+            {% else %}
+            Раз в три месяца
+            {% endif %}:</div>
         <ul>
-            <li> обработайте животное глистогонными средствами и против блох и клещей.</li>
+            <li> 
+                {% if 'eng' == lang %}
+                treat the animal with anthelmintics and against fleas and ticks.
+                {% elif 'ukr' == lang %}
+                обробіть тварину глистогінними засобами і проти бліх та кліщів.
+                {% else %}
+                обработайте животное глистогонными средствами и против блох и клещей.
+                {% endif %}
+            </li>
         </ul>
         <div class="sub_title">Раз в год:</div>
         <ul>
-            <li> проверяйте общее состояние здоровья кошки и сделайте прививки.</li>
+            <li> 
+                {% if 'eng' == lang %}
+                check your cat's general health and get vaccinated.
+                {% elif 'ukr' == lang %}
+                перевіряйте загальний стан здоров'я кішки та зробіть щеплення.
+                {% else %}
+                проверяйте общее состояние здоровья кошки и сделайте прививки.
+                {% endif %}
+            </li>
         </ul>
-        <p>Заботьтесь о любимце, правильно кормите, играйте. Тогда счастливый и здоровый питомец проживет с вами долгие годы, возможно, даже побьет все рекорды по долголетию.</p>
+        <p>
+            {% if 'eng' == lang %}
+            Take care of your pet, feed properly, play. Then a happy and healthy pet will live with you for many years, perhaps even breaking all records for longevity.
+            {% elif 'ukr' == lang %}
+            Дбайте про улюбленця, правильно годуйте, грайте. Тоді щасливий і здоровий вихованець проживе з вами довгі роки, можливо навіть поб'є всі рекорди з довголіття.
+            {% else %}
+            Заботьтесь о любимце, правильно кормите, играйте. Тогда счастливый и здоровый питомец проживет с вами долгие годы, возможно, даже побьет все рекорды по долголетию.
+            {% endif %}
+        </p>
     </div>
     <br>
 </div>
